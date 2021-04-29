@@ -1,97 +1,25 @@
-/* select */
+/* Nav */
 
-const element = document.querySelector('#realism');
-const choices = new Choices(element, {
-  choices: [{
-    value: 'Реализм',
-    label: 'Реализм',
-    selected: true,
-    disabled: true,
-  }
-],
-
-  shouldSort: false,
-  searchEnabled: false,
-  removeItemButton: false,
-  itemSelectText: "",
-});
-
-const element1 = document.querySelector('#impressionizm');
-const choices1 = new Choices(element1, {
-  choices: [{
-    value: 'Импрессионизм',
-    label: 'Импрессионизм',
-    selected: true,
-    disabled: true,
-  }
-],
-
-  shouldSort: false,
-  searchEnabled: false,
-  removeItemButton: false,
-  itemSelectText: "",
-});
-
-const element2 = document.querySelector('#postImpressionizm');
-const choices2 = new Choices(element2, {
-  choices: [{
-    value: 'Постимпрессионизм',
-    label: 'Постимпрессионизм',
-    selected: true,
-    disabled: true,
-  }
-],
-
-  shouldSort: false,
-  searchEnabled: false,
-  removeItemButton: false,
-  itemSelectText: "",
-});
-
-const element3 = document.querySelector('#avantGarde');
-const choices3 = new Choices(element3, {
-  choices: [{
-    value: 'Авангард',
-    label: 'Авангард',
-    selected: true,
-    disabled: true,
-  }
-],
-
-  shouldSort: false,
-  searchEnabled: false,
-  removeItemButton: false,
-  itemSelectText: "",
-});
-
-const element4 = document.querySelector('#futurism');
-const choices4 = new Choices(element4, {
-  choices: [{
-    value: 'Футуризм',
-    label: 'Футуризм',
-    selected: true,
-    disabled: true,
-  }
-],
-
-  shouldSort: false,
-  searchEnabled: false,
-  removeItemButton: false,
-  itemSelectText: "",
-});
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.header__link').addEventListener('click', function() {
+    document.querySelector('.header__list--dropdown').classList.toggle('active');
+    document.querySelector('.header__img').classList.toggle('active');
+    document.querySelector('.header__link').classList.toggle('active');
+  })
+})
 
 
 /* Menu */
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#burger').addEventListener('click', function() {
-    document.querySelector('#menu').classList.toggle('is-active')
+    document.querySelector('#menu').classList.toggle('is-active');
   })
 })
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#close').addEventListener('click', function() {
-    document.querySelector('#menu').classList.toggle('is-active')
+    document.querySelector('#menu').classList.toggle('is-active');
   })
 })
 
@@ -99,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#search').addEventListener('click', function() {
-    document.querySelector('#searchInput').classList.add('is-active')
+    document.querySelector('#searchInput').classList.add('is-active');
   })
 })
 
