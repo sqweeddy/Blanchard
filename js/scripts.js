@@ -11,9 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
       document.querySelector(`[data-target="${path}"]`).classList.add('dropdown-list--active')
 
-      document.querySelector('.header__list--dropdown').classList.toggle('dropdown-list--active');
-      document.querySelector('.header__img').classList.toggle('header__img--active');
-      document.querySelector('.header__link').classList.toggle('header__link--active');
+      document.querySelectorAll('.dropdown-list--active > .header__img').classList.toggle('header__img--active');
+      document.querySelectorAll('.dropdown-list--active > .header__link').classList.toggle('header__link--active');
     })
   })
 })
@@ -37,7 +36,23 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#search').addEventListener('click', function() {
-    document.querySelector('#searchInput').classList.add('is-active');
+    document.querySelector('.search-top').classList.toggle('search-top--active');
+    document.querySelector('#close-search').classList.toggle('search__close--active');
+    document.querySelector('#searchInput').classList.toggle('search-top__input--is-active');
+  })
+})
+
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('#close-search').addEventListener('click', function() {
+    document.querySelector('.search-top').classList.toggle('search-top--active');
+    document.querySelector('#close-search').classList.toggle('search__close--active');
+    document.querySelector('#searchInput').classList.toggle('search-top__input--is-active');
+  })
+
+  document.querySelector('.hero').addEventListener('click', function() {
+    document.querySelector('.search-top').classList.remove('search-top--active');
+    document.querySelector('#close-search').classList.remove('search__close--active');
+    document.querySelector('#searchInput').classList.remove('search-top__input--is-active');
   })
 })
 
