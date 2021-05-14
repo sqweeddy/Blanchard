@@ -44,6 +44,7 @@
 }
 
 .page {
+  position: relative;
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -82,7 +83,10 @@
 /* Header */
 
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
 }
 
@@ -159,10 +163,6 @@
   transition: color .2s ease-in-out;
 }
 
-.nav__link:hover {
-  color: var(--purple-light);
-}
-
 .nav__link:active {
   color: var(--purple-dark);
   outline: none;
@@ -176,14 +176,6 @@
 
 .login__img path {
   transition: fill .2s ease-in-out;
-}
-
-.login__link:hover {
-  color: var(--purple-light);
-}
-
-.login__link:hover .login__img path {
-  fill: var(--purple-light);
 }
 
 .login__link:active {
@@ -222,16 +214,8 @@
   margin-right: 89px;
 }
 
-.header__link:hover {
-  color: var(--purple);
-}
-
 .header__link .header__img path {
   transition: stroke .3s ease-in-out;
-}
-
-.header__link:hover .header__img path{
-  stroke: var(--purple);
 }
 
 .header__list--dropdown {
@@ -285,10 +269,6 @@
   background-repeat: no-repeat;
   background-size: 220px 40px;
   background-position: center;
-}
-
-.dropdown-list__link:hover {
-  outline: 2px solid var(--purple);
 }
 
 .dropdown-list__link--bg1 {
@@ -400,24 +380,12 @@
   color: white;
 }
 
-.search__input:hover {
-  border-color: var(--purple-light);
-}
-
 .search__img rect {
   transition: fill .2s ease-in-out;
 }
 
 .search__img path {
   transition: fill .2s ease-in-out;
-}
-
-.search__input:hover + .search__btn .search__img rect{
-  fill: var(--purple-light);
-}
-
-.search__input:hover + .search__btn .search__img path{
-  fill: var(--purple-light);
 }
 
 /* Hero */
@@ -444,14 +412,10 @@
 .hero {
   padding-top: 242px;
   padding-bottom: 123px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   background-image: url('../img/hero-1.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
   /* animation-name: animation; */
   animation-duration: 25s;
   animation-iteration-count: infinite;
@@ -491,11 +455,8 @@
 
 .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px var(--purple-dark);
-}
-
-.btn:hover {
-  border-color: var(--purple-light);
+  box-shadow: 0 0 0 3px white,
+  0 0 0 6px var(--purple-dark);
 }
 
 .btn:active {
@@ -511,6 +472,24 @@
   color: white;
 }
 
+/* About */
+
+.about {
+  padding: 84px 0;
+}
+
+.heading {
+  margin-bottom: 22px;
+  font-size: 48px;
+  color: var(--dark);
+}
+
+.about__descr {
+  max-width: 1080px;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--dark);
+}
 
 
 
@@ -526,6 +505,61 @@
 
 
 
+
+@media (min-width:1200px) {
+
+  .nav__link:hover {
+    color: var(--purple-light);
+  }
+
+  .login__link:hover {
+    color: var(--purple-light);
+  }
+
+  .login__link:hover .login__img path {
+    fill: var(--purple-light);
+  }
+
+  .header__link:hover {
+    color: var(--purple);
+  }
+
+  .header__link:hover .header__img path{
+    stroke: var(--purple);
+  }
+
+  .dropdown-list__link:hover {
+    outline: 2px solid var(--purple);
+  }
+
+  .search__input:hover {
+    border-color: var(--purple-light);
+  }
+
+  .search__input:hover + .search__btn .search__img rect{
+    fill: var(--purple-light);
+  }
+
+  .search__input:hover + .search__btn .search__img path{
+    fill: var(--purple-light);
+  }
+
+  .btn:hover {
+    border-color: var(--purple-light);
+  }
+}
+
+@media (max-width:1199px) {
+
+  .nav__link {
+    transition: color .1s ease-in-out;
+  }
+
+  .btn {
+    transition: color .1s ease-in-out,
+    border-color .1s ease-in-out;
+  }
+}
 
 @media (max-width:1679px) {
 
@@ -911,5 +945,21 @@
   .hero__link {
     padding: 11px 16px 11px 19px;
     font-size: 12px;
+  }
+
+  /* About*/
+
+  .about {
+    padding: 53px 0;
+  }
+
+  .heading {
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .about__descr {
+    font-size: 14px;
+    line-height: 28px;
   }
 }

@@ -11,8 +11,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
       document.querySelector(`[data-target="${path}"]`).classList.add('dropdown-list--active')
 
-      document.querySelectorAll('.dropdown-list--active > .header__img').classList.toggle('header__img--active');
-      document.querySelectorAll('.dropdown-list--active > .header__link').classList.toggle('header__link--active');
+      let activeList = document.querySelector('.dropdown-list--active');
+
+      activeList.previousElementSibling('.header__link').classList.add('header__link--active');
+      activeList.closest('.header__img').classList.add('header__img--active');
+
+      // document.querySelectorAll('.dropdown-list--active > .header__img').classList.toggle('header__img--active');
+      // document.querySelectorAll('.dropdown-list--active > .header__link').classList.toggle('header__link--active');
     })
   })
 })
