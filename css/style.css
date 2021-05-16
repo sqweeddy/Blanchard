@@ -453,10 +453,21 @@
   transition: border-color .2s ease-in-out;
 }
 
+.box {
+  position: relative;
+}
+
 .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px white,
-  0 0 0 6px var(--purple-dark);
+}
+
+.btn:focus::after {
+  content: url('../img/btn-box.svg');
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  bottom: 5px;
+  right: 5px;
 }
 
 .btn:active {
@@ -475,11 +486,13 @@
 /* About */
 
 .about {
-  padding: 84px 0;
+  padding-top: 84px;
+  padding-bottom: 70px;
 }
 
 .heading {
   margin-bottom: 22px;
+  font-weight: 400;
   font-size: 48px;
   color: var(--dark);
 }
@@ -491,6 +504,86 @@
   color: var(--dark);
 }
 
+/* Galery */
+
+.galery {
+  padding-top: 85px;
+  padding-bottom: 70px;
+  max-height: 995px;
+  background-image: url('../img/galery.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.galery__container {
+  max-height: 840px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.galery__container > * {
+  flex: 1 1;
+}
+
+.galery__heading {
+  color: white;
+  margin-bottom: 29px;
+}
+
+.filter {
+  margin-bottom: 474px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.filter__descr {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.filter__select {
+  padding-left: 10px;
+  max-width: 400px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+}
+
+.gallery__note {
+  max-width: 400px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
+  color: white;
+}
+
+.galery__swiper {
+  padding-left: 50px;
+  max-width: 1200px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  margin-top: unset;
+  margin-bottom: 35px;
+  position: unset;
+  height: unset;
+  display: inline-block;
+}
+
+.gallery__image {
+  margin-bottom: 48px;
+}
+
+.gallery__picture:not(:nth-child(3n+3)) {
+  margin-right: 45px;
+}
 
 
 
@@ -506,7 +599,8 @@
 
 
 
-@media (min-width:1200px) {
+
+@media (hover: hover) and (pointer: fine) {
 
   .nav__link:hover {
     color: var(--purple-light);
