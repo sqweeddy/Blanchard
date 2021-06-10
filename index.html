@@ -226,52 +226,161 @@
       <div class="container galery__container">
         <h2 class="heading galery__heading m-p--reset">Галерея</h2>
         <div class="filter">
-          <p class="filter__descr m-p--reset">Фильтровать по:</p>
-          <select name="author" id="author" class="filter__select">
-            <option value="author">Автор</option>
-          </select>
-          <select name="style" id="style" class="filter__select">
-            <option value="style">Направление</option>
-          </select>
-          <select name="technics" id="technics" class="filter__select">
-            <option value="technics">Техника</option>
+          <p class="filter__descr m-p--reset">Фильтр</p>
+          <select name="filter" id="filter" class="filter__select">
+            <option value="painting">Живопись</option>
           </select>
         </div>
-        <p class="gallery__note m-p--reset">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__login" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией. </p>
+        <p class="gallery__note m-p--reset">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__login link--reset" href="#">авторизуйтесь</a>, либо воспользуйтесь лицензией. </p>
         <div class="swiper-container galery__swiper">
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
+          <div class="swiper-navigation">
+            <div class="swiper-button-left">
+              <svg class="swiper-button-left__pic" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"/>
+                <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="black"/>
+                <path d="M16 20L11 15L16 10" stroke="white"/>
+              </svg>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-right">
+              <svg class="swiper-button-right__pic" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
+                <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="black"/>
+                <path d="M14 20L19 15L14 10" stroke="white"/>
+              </svg>
+            </div>
+          </div>
+
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide">
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-1.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-1.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-1.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-1.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-1.jpg" alt="Изображение Галереи">
               </picture>
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-2.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-2.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-2.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-2.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-2.jpg" alt="Изображение Галереи">
               </picture>
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-3.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-3.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-3.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-3.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-3.jpg" alt="Изображение Галереи">
               </picture>
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-4.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-4.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-4.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-4.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-4.jpg" alt="Изображение Галереи">
               </picture>
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-5.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-5.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-5.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-5.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-5.jpg" alt="Изображение Галереи">
               </picture>
               <picture class="gallery__picture">
-                <source srcset="img/galery-swiper/galery-6.jpg">
-                <img class="gallery__image" src="img/galery-swiper/galery-6.jpg" alt="">
+                <source srcset="img/galery-swiper/desktop/galery-6.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-6.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-6.jpg" alt="Изображение Галереи">
               </picture>
             </div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
+            <div class="swiper-slide">
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-7.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-7.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-7.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-8.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-8.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-8.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-9.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-9.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-9.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-10.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-10.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-10.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-11.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-11.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-11.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-12.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-12.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-12.jpg" alt="Изображение Галереи">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-13.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-13.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-13.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-14.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-14.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-14.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-15.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-15.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-15.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-16.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-16.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-16.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-17.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-17.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-17.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-18.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-18.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-18.jpg" alt="Изображение Галереи">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-19.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-19.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-19.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-20.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-20.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-20.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-21.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-21.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-21.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-22.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-22.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-22.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-23.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-23.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-23.jpg" alt="Изображение Галереи">
+              </picture>
+              <picture class="gallery__picture">
+                <source srcset="img/galery-swiper/desktop/galery-24.jpg" media="(min-width:1500px)">
+                <source srcset="img/galery-swiper/320/galery-24.jpg" media="(min-width:320px)">
+                <img class="gallery__image" src="img/galery-swiper/desktop/galery-24.jpg" alt="Изображение Галереи">
+              </picture>
+            </div>
           </div>
         </div>
         </div>

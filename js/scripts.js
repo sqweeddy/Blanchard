@@ -73,14 +73,14 @@ const swiper = new Swiper('.swiper-container', {
   effect: 'fade',
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-right',
+    prevEl: '.swiper-button-left',
   },
 
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
-    type: 'bullets',
+    type: 'fraction',
     clickable: true,
   },
 });
