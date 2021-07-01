@@ -61,23 +61,50 @@ window.addEventListener('DOMContentLoaded', function() {
   })
 })
 
+/* Select */
+
+const element = document.querySelector('#gallery-filter');
+const choices = new Choices(element, {
+  choices: [{
+    value: 'Живопись',
+    label: 'Живопись',
+    selected: true,
+    disabled: true,
+  },
+  {
+    value: 'Рисунок',
+    label: 'Рисунок',
+    selected: false,
+    disabled: false,
+  }, {
+    value: 'Скульптура',
+    label: 'Скульптура',
+    selected: false,
+    disabled: false,
+  }
+],
+
+  shouldSort: false,
+  searchEnabled: false,
+  removeItemButton: false,
+  itemSelectText: "",
+});
+
 /* Swiper */
 
-const swiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  loop: true,
-
-  autoplay: {
-    delay: 5000,
-  },
-  effect: 'fade',
-
+var swiper = new Swiper('.gallery__swiper', {
+  width: 1100,
+  slidesPerView: 3,
+  slidesPerColumn: 2,
+  slidesPerGroup: 3,
+  // effect: 'fade',
+  // autoplay: {
+  //   delay: 5000,
+  // },
   navigation: {
     nextEl: '.swiper-button-right',
     prevEl: '.swiper-button-left',
   },
-
-  // If we need pagination
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
