@@ -24,8 +24,8 @@
 
 const params = {
   btnClassName: "header__link",
-  activeClassName: "dropdown-list--active",
-  disabledClassName: "dropdown-list--disable"
+  activeClassName: "is-active",
+  disabledClassName: "is-disable"
 }
 
 function onDisable(evt) {
