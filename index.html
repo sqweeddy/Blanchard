@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/choices.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -256,7 +255,7 @@
             </div>
 
             <div class="swiper-wrapper">
-              <div class="swiper-slide gallery-slide">
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-1.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-1.jpg" media="(min-width:1024px)">
@@ -264,8 +263,8 @@
                   <source srcset="img/gallery-swiper/320/galery-1.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-1.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
-              <div class="swiper-slide gallery-slide">
+              </a>
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-malevich">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-2.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-2.jpg" media="(min-width:1024px)">
@@ -273,8 +272,8 @@
                   <source srcset="img/gallery-swiper/320/galery-2.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-2.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
-              <div class="swiper-slide gallery-slide">
+              </a>
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-3.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-3.jpg" media="(min-width:1024px)">
@@ -282,8 +281,8 @@
                   <source srcset="img/gallery-swiper/320/galery-3.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-3.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
-              <div class="swiper-slide gallery-slide">
+              </a>
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-4.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-4.jpg" media="(min-width:1024px)">
@@ -291,8 +290,8 @@
                   <source srcset="img/gallery-swiper/320/galery-4.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/galery-swiper/desktop/galery-4.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
-              <div class="swiper-slide gallery-slide">
+              </a>
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-5.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-5.jpg" media="(min-width:1024px)">
@@ -300,8 +299,8 @@
                   <source srcset="img/gallery-swiper/320/galery-5.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-5.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
-              <div class="swiper-slide gallery-slide">
+              </a>
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-6.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-6.jpg" media="(min-width:1024px)">
@@ -309,7 +308,7 @@
                   <source srcset="img/gallery-swiper/320/galery-6.jpg" media="(min-width:320px)">
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-6.jpg" alt="Изображение Галереи">
                 </picture>
-              </div>
+              </a>
               <div class="swiper-slide gallery-slide">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-7.jpg" media="(min-width:1400px)">
@@ -481,19 +480,56 @@
         </div>
       </div>
     </section>
+    <button class="gallery-modal-btn m-p-reset" data-path="gallery-malevich"></button>
 
-    <a class="popup-with-zoom-anim" href="#small-dialog">Open with fade-zoom animation</a><br>
-    <a class="popup-with-move-anim" href="#small-dialog">Open with fade-slide animation</a>
-
-    <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-    <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-      <h1>Dialog example</h1>
-      <p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
-    </div>
   </main>
 
+  <div class="modals">
+    <div class="modal-overlay">
+      <div class="modal modal--gallery-malevich" data-target="gallery-malevich">
+        <button class="modal-close m-p-reset">
+          <svg class="modal-close__cross" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666641 15.3044L15.3333 0.000153846L16 0.695801L1.33331 16L0.666641 15.3044Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -0.000125032L15.3334 15.3041L14.6667 15.9998L5.76143e-05 0.695522L0.666725 -0.000125032Z" fill="black"/>
+          </svg>
+        </button>
+        <div class="modal__left">
+          <picture>
+            <source srcset="img/gallery-swiper/gallery-modal-img-1920.jpg" media="(min-width:1400px)">
+            <source srcset="img/gallery-swiper/gallery-modal-img-1024.jpg" media="(min-width:1024px)">
+            <source srcset="img/gallery-swiper/gallery-modal-img-768.jpg" media="(min-width:768px)">
+            <source srcset="img/gallery-swiper/gallery-modal-img-320.jpg" media="(min-width:320px)">
+            <img class="modal__image" src="img/gallery-swiper/gallery-modal-img-1920.jpg" alt="Женщина с граблями">
+          </picture>
+        </div>
+        <div class="modal__right about-picture">
+          <p class="about-picture__author m-p-reset">Казимир Малевич</p>
+          <p class="about-picture__title m-p-reset">"Женщина с граблями"</p>
+          <p class="about-picture__date m-p-reset">1931-1932</p>
+          <p class="about-picture__descr m-p-reset">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.</p>
+        </div>
+      </div>
+      <div class="modal modal--gallery-empty" data-target="gallery-empty">
+        <button class="modal-close m-p-reset">
+          <svg class="modal-close__cross" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666641 15.3044L15.3333 0.000153846L16 0.695801L1.33331 16L0.666641 15.3044Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -0.000125032L15.3334 15.3041L14.6667 15.9998L5.76143e-05 0.695522L0.666725 -0.000125032Z" fill="black"/>
+          </svg>
+        </button>
+        <div class="modal__left">
+          <img class="temporary-img" src="img/gallery-swiper/artist.png" alt="Изображение художника">
+        </div>
+        <div class="modal__right about-picture">
+          <p class="about-picture__author m-p-reset">Автор</p>
+          <p class="about-picture__title m-p-reset">"Название картирны"</p>
+          <p class="about-picture__date m-p-reset">Дата</p>
+          <p class="about-picture__descr m-p-reset">Описание картины</p>
+        </div>
+      </div>
+      </div>
+    </div>
 
-  <script defer src="js/jquery.magnific-popup.js"></script>
+
   <script defer src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script defer src="js/choices.min.js"></script>
   <script defer src="js/scripts.js"></script>

@@ -160,38 +160,40 @@ var swiper = new Swiper('.gallery__swiper', {
   },
 });
 
-/* Popup */
+/* Modal */
 
-$(document).ready(function() {
-	$('.popup-with-zoom-anim').magnificPopup({
-		type: 'inline',
+const modalLink = document.querySelectorAll('.modal-link');
+const modalOverlay = document.querySelector('.modal-overlay ');
+const modals = document.querySelectorAll('.modal');
+const modalClose = document.querySelector('.modal-close__cross')
 
-		fixedContentPos: false,
-		fixedBgPos: true,
+modalLink.forEach((el) => {
+	el.addEventListener('click', (e) => {
+		let path = e.currentTarget.getAttribute('data-path');
 
-		overflowY: 'auto',
+		modals.forEach((el) => {
+			el.classList.remove('modal--visible');
+		});
 
-		closeBtnInside: true,
-		preloader: false,
-
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in'
+		document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+		modalOverlay.classList.add('modal-overlay--visible');
 	});
+});
 
-	$('.popup-with-move-anim').magnificPopup({
-		type: 'inline',
+modalOverlay.addEventListener('click', (e) => {
+	console.log(e.target);
 
-		fixedContentPos: false,
-		fixedBgPos: true,
+	if (e.target == modalOverlay) {
+		modalOverlay.classList.remove('modal-overlay--visible');
+		modals.forEach((el) => {
+			el.classList.remove('modal--visible');
+		});
+	};
 
-		overflowY: 'auto',
-
-		closeBtnInside: true,
-		preloader: false,
-
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-slide-bottom'
-	});
+  if (e.target == modalClose) {
+		modalOverlay.classList.remove('modal-overlay--visible');
+		modals.forEach((el) => {
+			el.classList.remove('modal--visible');
+		});
+	};
 });
