@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/choices.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -255,7 +256,7 @@
             </div>
 
             <div class="swiper-wrapper">
-              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-malevich">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-1.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-1.jpg" media="(min-width:1024px)">
@@ -264,7 +265,7 @@
                   <img class="gallery__image" src="img/gallery-swiper/desktop/galery-1.jpg" alt="Изображение Галереи">
                 </picture>
               </a>
-              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-malevich">
+              <a href="#" class="swiper-slide gallery-slide modal-link link-reset" data-path="gallery-empty">
                 <picture class="gallery__picture">
                   <source srcset="img/gallery-swiper/desktop/galery-2.jpg" media="(min-width:1400px)">
                   <source srcset="img/gallery-swiper/1024/gallery-2.jpg" media="(min-width:1024px)">
@@ -480,7 +481,209 @@
         </div>
       </div>
     </section>
-    <button class="gallery-modal-btn m-p-reset" data-path="gallery-malevich"></button>
+
+    <section class="catalog">
+      <div class="container catalog__container">
+        <div class="catalog__top">
+          <h2 class="catalog__heading heading m-p-reset">Каталог</h2>
+          <ul class="catalog__flags list-reset">
+            <li class="flag flag--fr">
+              <img src="img/catalog/fra.png" alt="Флаг Франции">
+            </li>
+            <li class="flag flag--ger">
+              <img src="img/catalog/ger.png" alt="Флаг Германии">
+            </li>
+            <li class="flag flag--ita">
+              <img src="img/catalog/ita.png" alt="Флаг Италии">
+            </li>
+            <li class="flag flag--ru">
+              <img src="img/catalog/rus.png" alt="Флаг России">
+            </li>
+            <li class="flag flag--bel">
+              <img src="img/catalog/bel.png" alt="Флаг Бельгии">
+            </li>
+          </ul>
+        </div>
+        <p class="catalog__text m-p-reset">Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы. </p>
+        <div class="catalog__bot catalog__italy">
+          <div class="catalog__left">
+            <div class="about-author about-author--active about-author--girlandayo" data-target="about-author--girlandayo">
+              <img class="about-author__img" src="img/catalog/girlandayo.jpg" alt="Изображение Доменико Гирландайо">
+              <p class="about-author__name m-p-reset">Доменико Гирландайо</p>
+              <p class="about-author__date m-p-reset">2 июня 1448 — 11 января 1494.</p>
+              <p class="about-author__descr m-p-reset">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли выступают знатные граждане Флоренции в костюмах того времени).</p>
+            </div>
+            <div class="about-author about-author--empty" data-target="about-author--empty">
+              <div class="about-author__bg">
+                <img class="about-author__img" src="img/gallery-swiper/artist.png" alt="Изображение художника">
+              </div>
+              <p class="about-author__name m-p-reset">Что мы о нем знаем?</p>
+              <p class="about-author__date m-p-reset"></p>
+              <p class="about-author__descr m-p-reset">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+              <a href="#gallery" class="about-author__link link-reset">В галерею</a>
+            </div>
+          </div>
+          <ul id="accordion" class="catalog__right accordion list-reset">
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1400 по 1499 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бенедетто ди Биндо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бергоньоне, Амброджо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Биссоло, Франческо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Больтраффио, Джованни</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бонсиньори, Франческо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Боттичини, Рафаэлло</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Брамантино</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бреа, Людовико</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бьяджо д’Антонио Туччи</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Веккьетта</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Андреа Верроккьо</a>
+                <a href="#catalog" class="accordion__link accordion__link--active link-reset" data-path="about-author--girlandayo">Доменико Гирландайо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Беноццо Гоццоли</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Граначчи, Франческо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Грегорио ди Чекко</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джованни да Удине</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джованни ди Паоло</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джорджоне</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Парентино, Бернардо</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пазеллино</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пьетро Перуджино</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Перуцци, Бальдассаре</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пизанелло</a>
+                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пинтуриккьо</a>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1500 по 1599 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1600 по 1699 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1700 по 1799 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1800 по 1899 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 1900 по 1999 гг.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <div class="accordion__title">
+                <h3 class="accordion__heading">С 2000 г.</h3>
+                <svg class="accordion__arrow" width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="none"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </div>
+              <div class="accordion__content">
+                <div class="empty">
+                  <div class="empty__pic"></div>
+                  <div class="empty__content">
+                    <p class="empty__title m-p-reset">Здесь пока пусто</p>
+                    <p class="empty__text m-p-reset">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="empty__link link-reset">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -531,6 +734,8 @@
 
 
   <script defer src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script defer src="js/choices.min.js"></script>
   <script defer src="js/scripts.js"></script>
 </body>

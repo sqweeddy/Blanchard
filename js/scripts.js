@@ -79,6 +79,19 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#searchInput').classList.remove('search-top__input--is-active');
   });
 
+  /* Tabs */
+
+  document.querySelectorAll('.accordion__link').forEach(function(tabsBtn){
+    tabsBtn.addEventListener('click', function(event) {
+      const path = event.currentTarget.dataset.path;
+
+      document.querySelectorAll('.about-author').forEach(function(tabContent) {
+        tabContent.classList.remove('about-author--active');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.add('about-author--active');
+    });
+  });
+
 
 });
 
@@ -165,7 +178,23 @@ var swiper = new Swiper('.gallery__swiper', {
 const modalLink = document.querySelectorAll('.modal-link');
 const modalOverlay = document.querySelector('.modal-overlay ');
 const modals = document.querySelectorAll('.modal');
-const modalClose = document.querySelector('.modal-close__cross')
+const modalClose = document.querySelector('.modal-close__cross');
+const	body = document.body;
+
+let disableScroll = function () {
+	let pagePosition = window.scrollY;
+	document.body.classList.add('disable-scroll');
+	document.body.dataset.position = pagePosition;
+	document.body.style.top = -pagePosition + 'px';
+}
+
+let enableScroll = function () {
+	let pagePosition = parseInt(document.body.dataset.position, 10);
+	document.body.style.top = 'auto';
+	document.body.classList.remove('disable-scroll');
+	window.scroll({ top: pagePosition, left: 0 });
+	document.body.removeAttribute('data-position');
+}
 
 modalLink.forEach((el) => {
 	el.addEventListener('click', (e) => {
@@ -177,6 +206,7 @@ modalLink.forEach((el) => {
 
 		document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
 		modalOverlay.classList.add('modal-overlay--visible');
+    disableScroll();
 	});
 });
 
@@ -188,6 +218,7 @@ modalOverlay.addEventListener('click', (e) => {
 		modals.forEach((el) => {
 			el.classList.remove('modal--visible');
 		});
+    enableScroll();
 	};
 
   if (e.target == modalClose) {
@@ -195,5 +226,16 @@ modalOverlay.addEventListener('click', (e) => {
 		modals.forEach((el) => {
 			el.classList.remove('modal--visible');
 		});
+    enableScroll();
 	};
 });
+
+
+/* Accordion */
+
+$( function() {
+  $( "#accordion" ).accordion({
+    collapsible: true,
+    icons: false,
+  });
+} );
