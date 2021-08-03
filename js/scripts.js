@@ -92,6 +92,35 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  document.querySelectorAll('.accordion__link').forEach(function(linkBtn) {
+    linkBtn.addEventListener('click', function(e) {
+      document.querySelectorAll('.accordion__link').forEach(function(linkColor) {
+        linkColor.classList.remove('accordion__link--active');
+      });
+      e.currentTarget.classList.add('accordion__link--active');
+    });
+  });
+
+  document.querySelectorAll('.country-link').forEach(function(tabsBtn){
+    tabsBtn.addEventListener('click', function(event) {
+      const path = event.currentTarget.dataset.path;
+
+      document.querySelectorAll('.catalog__bot').forEach(function(tabContent) {
+        tabContent.classList.remove('catalog__bot--active');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.add('catalog__bot--active');
+    });
+  });
+
+  document.querySelectorAll('.country-link').forEach(function(linkBtn) {
+    linkBtn.addEventListener('click', function(e) {
+      document.querySelectorAll('.country-link').forEach(function(linkCircle) {
+        linkCircle.classList.remove('country-link--active');
+      });
+      e.currentTarget.classList.add('country-link--active');
+    });
+  });
+
 
 });
 

@@ -482,31 +482,41 @@
       </div>
     </section>
 
-    <section class="catalog">
+    <section id="catalog" class="catalog">
       <div class="container catalog__container">
         <div class="catalog__top">
           <h2 class="catalog__heading heading m-p-reset">Каталог</h2>
           <ul class="catalog__flags list-reset">
             <li class="flag flag--fr">
-              <img src="img/catalog/fra.png" alt="Флаг Франции">
+              <a href="#catalog" class="country-link link-reset" data-path="france">
+                <img class="flag-img" src="img/catalog/fra.png" alt="Флаг Франции">
+              </a>
             </li>
             <li class="flag flag--ger">
-              <img src="img/catalog/ger.png" alt="Флаг Германии">
+              <a href="#catalog" class="country-link link-reset" data-path="germany">
+                <img class="flag-img" src="img/catalog/ger.png" alt="Флаг Германии">
+              </a>
             </li>
             <li class="flag flag--ita">
-              <img src="img/catalog/ita.png" alt="Флаг Италии">
+              <a href="#catalog" class="country-link country-link--active link-reset" data-path="italy">
+                <img class="flag-img" src="img/catalog/ita.png" alt="Флаг Италии">
+              </a>
             </li>
             <li class="flag flag--ru">
-              <img src="img/catalog/rus.png" alt="Флаг России">
+              <a href="#catalog" class="country-link link-reset" data-path="russia">
+                <img class="flag-img" src="img/catalog/rus.png" alt="Флаг России">
+              </a>
             </li>
             <li class="flag flag--bel">
-              <img src="img/catalog/bel.png" alt="Флаг Бельгии">
+              <a href="#catalog" class="country-link link-reset" data-path="belgium">
+                <img class="flag-img" src="img/catalog/bel.png" alt="Флаг Бельгии">
+              </a>
             </li>
           </ul>
         </div>
         <p class="catalog__text m-p-reset">Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы. </p>
-        <div class="catalog__bot catalog__italy">
-          <div class="catalog__left">
+        <div class="catalog__bot catalog__italy catalog__bot--active" data-target="italy">
+          <div id="about-author" class="catalog__left">
             <div class="about-author about-author--active about-author--girlandayo" data-target="about-author--girlandayo">
               <img class="about-author__img" src="img/catalog/girlandayo.jpg" alt="Изображение Доменико Гирландайо">
               <p class="about-author__name m-p-reset">Доменико Гирландайо</p>
@@ -534,30 +544,80 @@
                 </svg>
               </div>
               <div class="accordion__content">
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бенедетто ди Биндо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бергоньоне, Амброджо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Биссоло, Франческо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Больтраффио, Джованни</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бонсиньори, Франческо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Боттичини, Рафаэлло</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Брамантино</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бреа, Людовико</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Бьяджо д’Антонио Туччи</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Веккьетта</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Андреа Верроккьо</a>
-                <a href="#catalog" class="accordion__link accordion__link--active link-reset" data-path="about-author--girlandayo">Доменико Гирландайо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Беноццо Гоццоли</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Граначчи, Франческо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Грегорио ди Чекко</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джованни да Удине</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джованни ди Паоло</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Джорджоне</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Парентино, Бернардо</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пазеллино</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пьетро Перуджино</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Перуцци, Бальдассаре</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пизанелло</a>
-                <a href="#catalog" class="accordion__link link-reset" data-path="about-author--empty">Пинтуриккьо</a>
+                <ul class="accordion-content-list list-reset">
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Бенедетто ди Биндо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Бергоньоне, Амброджо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Биссоло, Франческо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Больтраффио, Джованни</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Бонсиньори, Франческо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Боттичини, Рафаэлло</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Брамантино</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Бреа, Людовико</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Бьяджо д’Антонио Туччи</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Веккьетта</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Андреа Верроккьо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link accordion__link--active link-reset" data-path="about-author--girlandayo">Доменико Гирландайо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Беноццо Гоццоли</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Граначчи, Франческо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Грегорио ди Чекко</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Джованни да Удине</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Джованни ди Паоло</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Джорджоне</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Парентино, Бернардо</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Пазеллино</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Пьетро Перуджино</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Перуцци, Бальдассаре</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Пизанелло</a>
+                  </li>
+                  <li class="accordion-content-list__item">
+                    <a href="#about-author" class="accordion__link link-reset" data-path="about-author--empty">Пинтуриккьо</a>
+                  </li>
+                </ul>
               </div>
             </li>
             <li class="accordion__item">
@@ -681,6 +741,30 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div class="catalog__bot catalog__france" data-target="france">
+          <div class="catalog__left">
+            <img class="catalog-filler" src="img/catalog/fra-pic.jpg" alt="Звездная ночь">
+            <p class="m-p-reset">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum veniam itaque consectetur qui in voluptates ullam. Saepe ab itaque sit repudiandae! Nemo placeat praesentium, fugiat dolores debitis deleniti voluptate tenetur?</p>
+          </div>
+        </div>
+        <div class="catalog__bot catalog__germany" data-target="germany">
+          <div class="catalog__left">
+            <img class="catalog-filler" src="img/catalog/ger-pic.jpg" alt="Изображение">
+            <p class="m-p-reset">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum veniam itaque consectetur qui in voluptates ullam. Saepe ab itaque sit repudiandae! Nemo placeat praesentium, fugiat dolores debitis deleniti voluptate tenetur?</p>
+          </div>
+        </div>
+        <div class="catalog__bot catalog__russia" data-target="russia">
+          <div class="catalog__left">
+            <img class="catalog-filler" src="img/catalog/rus-pic.jpg" alt="Утро в сосновом бору">
+            <p class="m-p-reset">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum veniam itaque consectetur qui in voluptates ullam. Saepe ab itaque sit repudiandae! Nemo placeat praesentium, fugiat dolores debitis deleniti voluptate tenetur?</p>
+          </div>
+        </div>
+        <div class="catalog__bot catalog__belgium" data-target="belgium">
+          <div class="catalog__left">
+            <img class="catalog-filler" src="img/catalog/bel-pic.jpg" alt="Изображение">
+            <p class="m-p-reset">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum veniam itaque consectetur qui in voluptates ullam. Saepe ab itaque sit repudiandae! Nemo placeat praesentium, fugiat dolores debitis deleniti voluptate tenetur?</p>
+          </div>
         </div>
       </div>
     </section>
