@@ -248,9 +248,9 @@ modalOverlay.addEventListener('click', (e) => {
 			el.classList.remove('modal--visible');
 		});
     enableScroll();
-	};
+	}
 
-  if (e.target == modalClose) {
+  else if (e.target = modalClose) {
 		modalOverlay.classList.remove('modal-overlay--visible');
 		modals.forEach((el) => {
 			el.classList.remove('modal--visible');

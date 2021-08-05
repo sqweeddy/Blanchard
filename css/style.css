@@ -153,6 +153,10 @@
   .gallery-slide:hover::after {
     opacity: 1;
   }
+
+  .country-link:hover {
+    box-shadow: 0 0 20px var(--purple-dark);
+  }
 }
 
 /* Header */
@@ -955,27 +959,36 @@
 }
 
 .country-link {
+  display: inline-block;
   position: relative;
+  border-radius: 50%;
+  transition: box-shadow .2s ease-in-out;
+}
+
+.country-link:focus:focus-visible {
+  box-shadow: 0 0 20px var(--purple-dark);
+}
+
+.country-link:active {
+  margin: -2px;
+  border: 2px solid var(--purple-dark);
+  box-shadow: none;
+}
+
+.flag-img {
+  display: block;
 }
 
 .country-link--active::after {
   content: url('../img/catalog/purple-circle.png');
   position: absolute;
   left: -10px;
-  top: -39px;
+  top: -10px;
   animation: fade .5s;
 }
 
 .country-link:focus {
   outline: 0;
-}
-
-.country-link:focus:focus-visible::after {
-  content: url('../img/catalog/purple-circle.png');
-  position: absolute;
-  left: -10px;
-  top: -39px;
-  animation: fade .5s;
 }
 
 @keyframes fade {
@@ -1071,6 +1084,7 @@
 }
 
 .accordion__arrow {
+  padding-top: 1px;
   transition: transform 0.3s linear;
 }
 
@@ -1226,6 +1240,10 @@
 .about-author__bg {
   margin-bottom: 30px;
   background-color: #ececec;
+}
+
+.catalog-filler {
+  max-height: 400px;
 }
 
 
