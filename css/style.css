@@ -1083,9 +1083,12 @@
   align-items: center;
 }
 
-.accordion__arrow {
-  padding-top: 1px;
-  transition: transform 0.3s linear;
+.accordion__title::after {
+  content: '';
+  padding: 25px;
+  transition: background-image .3s ease;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg class='accordion__arrow' width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' fill='%23ECECEC'/%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' stroke='none'/%3E%3Cpath d='M33.3333 23.3333L25 31.6667L16.6667 23.3333' stroke='black'/%3E%3C/svg%3E");
 }
 
 .accordion__heading {
@@ -1117,10 +1120,17 @@
 
 .ui-state-focus {
   outline: 0;
+  transition: color .3s ease,
+  background-color .3s ease;
 }
 
 .ui-state-focus .accordion__heading {
   background-color: var(--purple);
+  color: white;
+}
+
+.ui-state-focus.accordion__title::after {
+  background-image: url("data:image/svg+xml,%3Csvg class='accordion__arrow' width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' fill='%23D1A9F0'/%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' stroke='none'/%3E%3Cpath d='M33.3333 23.3333L25 31.6667L16.6667 23.3333' stroke='black'/%3E%3C/svg%3E");
 }
 
 .accordion__link {
@@ -1135,12 +1145,8 @@
   color: white;
 }
 
-.accordion__arrow path {
-  transition: fill .4s ease;
-}
-
-.ui-state-hover.accordion__title .accordion__arrow path{
-  fill: var(--purple-light);
+.ui-state-hover.accordion__title::after {
+  background-image: url("data:image/svg+xml,%3Csvg class='accordion__arrow' width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' fill='%23D1A9F0'/%3E%3Cpath d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' stroke='none'/%3E%3Cpath d='M33.3333 23.3333L25 31.6667L16.6667 23.3333' stroke='black'/%3E%3C/svg%3E");
 }
 
 .ui-state-active {
@@ -1150,16 +1156,8 @@
   color: var(--purple-dark);
 }
 
-.ui-state-active.accordion__title .accordion__arrow {
-  transform: rotate(180deg);
-}
-
-.ui-state-active.accordion__title .accordion__arrow path {
-  fill: var(--purple-light);
-}
-
-.ui-state-active.accordion__title .accordion__arrow path:nth-child(2) {
-  stroke: var(--purple-dark);
+.ui-state-active.accordion__title::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z' fill='%23D1A9F0' stroke='%239D5CD0' stroke-width='2'/%3E%3Cpath d='M33.3333 26.6667L25 18.3333L16.6667 26.6667' stroke='black'/%3E%3C/svg%3E");
 }
 
 .ui-accordion .ui-accordion-content {
@@ -1244,7 +1242,145 @@
 
 .catalog-filler {
   max-height: 400px;
+  width: 100%;
 }
+
+/* Events */
+
+.events {
+  padding-top: 39px;
+  padding-bottom: 60px;
+}
+
+.cards-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -50px;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.card {
+  width: calc(100% / 3 - 50px);
+  min-height: 400px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  border: 1px solid var(--gray-light);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.fade-in {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.event-img {
+  padding-top: 296px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.event-img--1 {
+  background-image: url('../img/events/event-1.jpg');
+}
+
+.event-img--2 {
+  background-image: url('../img/events/event-2.jpg');
+}
+
+.event-img--3 {
+  background-image: url('../img/events/event-3.jpg');
+}
+
+.event-img--4 {
+  background-image: url('../img/events/event-4.jpg');
+}
+
+.event-img--5 {
+  background-image: url('../img/events/event-5.jpg');
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 18px 43px 50px;
+  min-height: 400px;
+}
+
+.event-content__location {
+  margin-bottom: 3px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.event-content__date {
+  margin-bottom: 7px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.event-content__title {
+  margin-bottom: 3px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33px;
+  color: var(--dark);
+}
+
+.event-content__descr {
+  margin-bottom: auto;
+  width: 95%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--dark);
+}
+
+.event-content__link {
+  padding-bottom: 4px;
+  width: max-content;
+  color: var(--purple);
+  border-bottom: 1px solid var(--purple);
+}
+
+.event-content__btn {
+  display: flex;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 17px 33px;
+  background: transparent;
+  color: var(--purple);
+}
+
+
+
+
+
 
 
 
@@ -1932,7 +2068,7 @@
 .country-link--active::after {
   content: url('../img/catalog/purple-circle-small.png');
   left: -6px;
-  top: -21px;
+  top: -6px;
 }
 
 .flag:not(:last-child) {
@@ -1954,15 +2090,15 @@
 }
 
 .ui-accordion .ui-accordion-header {
-  padding: 11px 0;
+  padding: 20px 0;
 }
 
 .accordion-content-list {
   column-count: 1;
 }
 
-.accordion__arrow {
-  width: 29px;
+.accordion__title::after {
+  padding: 15px;
 }
 
 .ui-accordion .ui-accordion-content {
