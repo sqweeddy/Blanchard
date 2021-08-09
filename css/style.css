@@ -1367,7 +1367,7 @@
   border-bottom: 1px solid var(--purple);
 }
 
-.event-content__btn {
+.event-content-btn {
   display: flex;
   margin: 0 auto;
   font-size: 18px;
@@ -1375,6 +1375,7 @@
   padding: 17px 33px;
   background: transparent;
   color: var(--purple);
+  cursor: pointer;
 }
 
 
@@ -1723,6 +1724,38 @@
     width: calc(460 / 925 * 100%);
   }
 
+  /* Events */
+
+  .events {
+    padding-top: 6px;
+  }
+
+  .cards-wrap {
+    margin-bottom: 22px;
+  }
+
+  .card {
+    width: calc(100%/3 - 35px);
+    margin-right: 27px;
+    margin-bottom: 27px;
+  }
+
+  .event-img {
+    padding-top: 198px;
+  }
+
+  .event-content {
+    padding: 16px 16px 51px 34px;
+    min-height: 483px;
+  }
+
+  .event-content__date {
+    margin-bottom: 6px;
+  }
+  .event-content__descr {
+    width: 93%;
+  }
+
 
   /* Modal */
 
@@ -1827,6 +1860,27 @@
 
   .catalog__left {
     width: 100%;
+  }
+
+  /* Events */
+
+  .events {
+    padding-top: 28px;
+  }
+
+  .card {
+    width: calc(100%/2 - 42px);
+    margin-right: 34px;
+    margin-bottom: 34px;
+  }
+
+  .event-content {
+    padding-bottom: 50px;
+  }
+
+  .event-content__title {
+    margin-bottom: 2px;
+    width: 98%;
   }
 
 
@@ -2054,6 +2108,7 @@
 
 .catalog {
   padding-top: 53px;
+  padding-bottom: 26px;
 }
 
 .catalog__heading {
@@ -2112,6 +2167,59 @@
 
 .about-author__name {
   margin-bottom: 18px;
+}
+
+/* Events */
+
+.events__heading {
+  margin-bottom: 15px;
+}
+
+.event-content {
+  padding: 16px 10px 50px 28px;
+}
+
+.event-content__title {
+  margin-bottom: 36px;
+}
+
+.cards-container {
+  overflow-x: hidden;
+}
+
+.cards-wrap {
+  margin-bottom: 13px;
+}
+
+.cards-wrap.swiper-wrapper {
+  flex-wrap: nowrap;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+.card.swiper-slide {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #666;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 8px;
+  margin-left: 7px;
+  width: 10px;
+  height: 10px;
+}
+
+.event-content-btn {
+  display: none;
 }
 
 /* Modal */

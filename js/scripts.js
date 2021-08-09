@@ -132,8 +132,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
     params = {
       // здесь, в параметрах, необходимо задать настройки
-      MIN_DESKTOP: 1024,
-      MIN_TABLET: 581,
+      MIN_DESKTOP: 1023,
+      MIN_TABLET: 767,
       DESKTOP_CARDS: 3,
       TABLET_CARDS: 2,
       MOBILE_CARDS: false,
