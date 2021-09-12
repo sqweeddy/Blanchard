@@ -495,6 +495,13 @@
   outline: 0;
 }
 
+.search-open-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .search__input {
   min-width: 218px;
   background: transparent;
@@ -922,6 +929,10 @@
   align-items: center;
 }
 
+.swiper-button-left, .swiper-button-right {
+  cursor: pointer;
+}
+
 .swiper-button-left {
   margin-right: 17px;
 }
@@ -952,6 +963,7 @@
   display: flex;
   align-items: flex-end;
   margin-bottom: 21px;
+  flex-wrap: wrap;
 }
 
 .catalog__flags {
@@ -1249,7 +1261,7 @@
 
 .events {
   padding-top: 39px;
-  padding-bottom: 60px;
+  padding-bottom: 81px;
 }
 
 .cards-wrap {
@@ -1378,9 +1390,188 @@
   cursor: pointer;
 }
 
+/* Editions */
 
+.editions {
+  padding-top: 85px;
+  padding-bottom: 81px;
+  background-image: url('../img/editions-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+.editions__container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: flex-start;
+}
 
+.editions__left {
+  margin-right: 173px;
+}
+
+.editions__heading {
+  margin-bottom: 28px;
+  color: white;
+}
+
+.subtitle {
+  margin-bottom: 13px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.edition__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 42px;
+}
+
+.checkbox-wrap {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-wrap {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.checkbox-wrap:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-list__label {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid white;
+  text-align: center;
+  transition: border .2s ease-in-out;
+}
+
+.custom-checkbox:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: var(--purple-light);
+  top: calc(50% - 2px);
+  left: calc(50% - 2px);
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.checkbox:checked + .custom-checkbox:before {
+  opacity: 1;
+}
+
+.checkbox:checked + .custom-checkbox {
+  border: 1px solid var(--purple-light);
+}
+
+.checkbox:checked ~ .custom-checkbox-text {
+  color: var(--purple-light);
+}
+
+.custom-checkbox-text {
+  padding-left: 25px;
+  color: white;
+  transition: color .2s ease-in-out;
+}
+
+.price-filter {
+  display: flex;
+  max-width: 277px;
+  max-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 6px;
+}
+
+.price-filter__price {
+  padding-top: 11px;
+  padding-left: 10px;
+  padding-bottom: 11px;
+  max-width: 73px;
+  border: none;
+  background-color: rgba(157, 92, 208, 0.5);
+}
+
+.price-filter__text {
+  padding: 4px 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.editions__right {
+  width: calc(1150 / 1600 *100%);
+}
+
+.editions-navigation {
+  padding-top: 28px;
+  margin-bottom: 28px;
+}
+
+.edition-pic {
+  margin-bottom: 22px;
+}
+
+.edition-info {
+  position: relative;
+}
+
+.edition-info__title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.edition-info__author {
+  margin-bottom: 17px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.edition-info__price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: white;
+}
+
+.order-btn {
+  padding: 8px 20px 9px 20px;
+  background: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
 
 
 
@@ -1617,13 +1808,17 @@
     display: flex;
   }
 
-  .search-top {
+  .search-open-btn {
     display: flex;
+  }
+
+  .search-top {
     align-items: center;
     justify-content: center;
   }
 
   .search-top--active {
+    display: flex;
     justify-content: space-between;
     padding: 30px 50px;
     position: absolute;
@@ -1632,22 +1827,26 @@
     right: 0;
     height: 100px;
     background-color: black;
-    z-index: 100;
   }
 
-  .search-top__img {
+  .search-img {
     width: 30px;
     height: 29px;
   }
 
   .search-top__btn {
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
   }
 
+  .search-top__btn--active {
+    display: flex;
+  }
+
   .search-top__input {
-    width: 576px;
+    width: 85%;
     background: transparent;
     border: none;
     border-bottom: 1px solid white;
@@ -1893,7 +2092,7 @@
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:580px) {
 
   .container {
     padding: 0 15px;
@@ -1947,7 +2146,7 @@
     min-height: 45px;
   }
 
-  .search-top__img {
+  .search-img {
     width: 16px;
     height: 16px;
   }
@@ -2237,4 +2436,87 @@
 .about-picture__date {
   margin-bottom: 12px;
 }
+
+.edition:first-child {
+  border-top: 1px solid lightgray;
+}
+
+.edition {
+  margin-top: -1px;
+  margin-bottom: 20px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid lightgray;
+  transition: border-color 0.3s ease;
+}
+
+.heading {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 40px 120px 40px 40px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.edition:first-child:hover,
+.edition:hover,
+.edition:focus-within {
+  border-color: orange;
+}
+
+.head-icon {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: lightgray;
+  transform: translateY(-50%);
+  transition: background-color.3s, 0.6s ease, transform 0.3s, 0.6s ease;
+}
+
+.head-icon::before,
+.head-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  transition: background-color, 0.5s ease;
+}
+
+.head-icon::before {
+  width: 60%;
+  height: 1px;
+}
+
+.head-icon::after {
+  width: 1px;
+  height: 60%;
+}
+
+.heading:hover,
+.heading:focus {
+  color: orange;
+  outline: none;
+}
+
+.heading:hover .head-icon,
+.heading:focus .head-icon {
+  background-color: orange;
+}
+
+.heading:hover .head-icon::before,
+.heading:hover .head-icon::after,
+.heading:focus .head-icon::before,
+.heading:focus .head-icon::after {
+  background-color: #fff;
+}
+
+.heading.ui-accordion-header-active .head-icon {
+  transform: translateY(-50%) rotate(45deg);
+}
+
 }

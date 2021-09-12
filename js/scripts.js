@@ -63,12 +63,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
   document.querySelector('#search').addEventListener('click', function() {
     document.querySelector('.search-top').classList.toggle('search-top--active');
+    document.querySelector('.search-top__btn').classList.toggle('search-top__btn--active');
     document.querySelector('#close-search').classList.toggle('search__close--active');
     document.querySelector('#searchInput').classList.toggle('search-top__input--is-active');
   });
 
   document.querySelector('#close-search').addEventListener('click', function() {
     document.querySelector('.search-top').classList.toggle('search-top--active');
+    document.querySelector('.search-top__btn').classList.toggle('search-top__btn--active');
     document.querySelector('#close-search').classList.toggle('search__close--active');
     document.querySelector('#searchInput').classList.toggle('search-top__input--is-active');
   });
@@ -133,7 +135,7 @@ window.addEventListener('DOMContentLoaded', function() {
     params = {
       // здесь, в параметрах, необходимо задать настройки
       MIN_DESKTOP: 1023,
-      MIN_TABLET: 767,
+      MIN_TABLET: 581,
       DESKTOP_CARDS: 3,
       TABLET_CARDS: 2,
       MOBILE_CARDS: false,
@@ -299,7 +301,7 @@ window.addEventListener('DOMContentLoaded', function() {
         pagination.classList.add(cards.params.paginationClassName);
         cards.cardsWrap.append(pagination);
 
-        cards.cardsWrap.classList.add("swiper-container");
+        cards.cardsWrap.classList.add("swiper");
         cards.cardsWrap.children[0].classList.add("swiper-wrapper");
 
 
@@ -338,7 +340,7 @@ window.addEventListener('DOMContentLoaded', function() {
         cards.cardsSlider
       ) {
         cards.cardsSlider.destroy();
-        cards.cardsWrap.classList.remove("swiper-container");
+        cards.cardsWrap.classList.remove("swiper");
         cards.cardsWrap.children[0].classList.remove("swiper-wrapper");
         cards.cardsWrap.children[0].removeAttribute("aria-live");
         cards.cardsWrap.children[0].removeAttribute("id");
@@ -384,49 +386,97 @@ const choices = new Choices(element, {
 /* Swiper */
 
 var swiper = new Swiper('.gallery__swiper', {
+
   navigation: {
     nextEl: '.swiper-button-right',
     prevEl: '.swiper-button-left',
   },
+
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
     clickable: true,
   },
 
+  slidesPerView: 1,
+  grid: {
+    rows:1,
+    fill: 'row'
+  },
+  spaceBetween: 50,
+
   breakpoints: {
     320: {
-      slidesPerColumnFill: 'row',
       slidesPerView: 1,
-      slidesPerColumn: 1,
-      slidesPerGroup: 1,
+      grid: {
+        rows: 1,
+      },
       spaceBetween: 1,
     },
 
-    768: {
-      slidesPerColumnFill: 'row',
+    580: {
       slidesPerView: 2,
-      slidesPerColumn: 2,
-      slidesPerGroup: 4,
-      spaceBetween: 34,
-    },
-
-    1024: {
-      slidesPerColumnFill: 'row',
-      slidesPerView: 2,
-      slidesPerColumn: 2,
-      slidesPerGroup: 4,
+      grid: {
+        rows: 2,
+      },
       spaceBetween: 34,
     },
 
     1400: {
-      slidesPerColumnFill: 'row',
       slidesPerView: 3,
-      slidesPerColumn: 2,
-      slidesPerGroup: 3,
+      grid: {
+        rows: 2,
+      },
       spaceBetween: 50,
     },
   },
+});
+
+var swiper = new Swiper('.editions__swiper', {
+
+  navigation: {
+    nextEl: '.swiper-button-right',
+    prevEl: '.swiper-button-left',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction',
+    clickable: true,
+  },
+
+  slidesPerView: 3,
+  grid: {
+    rows:1,
+    fill: 'row'
+  },
+  spaceBetween: 50,
+
+  // breakpoints: {
+  //   320: {
+  //     slidesPerView: 1,
+  //     grid: {
+  //       rows: 1,
+  //     },
+  //     spaceBetween: 1,
+  //   },
+
+  //   580: {
+  //     slidesPerView: 2,
+  //     grid: {
+  //       rows: 2,
+  //     },
+  //     spaceBetween: 34,
+  //   },
+
+  //   1400: {
+  //     slidesPerView: 3,
+  //     grid: {
+  //       rows: 2,
+  //     },
+  //     spaceBetween: 50,
+  //   },
+  // },
 });
 
 /* Modal */
@@ -495,3 +545,91 @@ $( function() {
     icons: false,
   });
 } );
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const MOBILE_WIDTH = 580;
+  let acc;
+  const accWrap = document.querySelector(".js-accordion-wrap");
+  const checkboxes = accWrap.querySelector(".js-checkboxes");
+  const accHeader = accWrap.querySelector(".js-accordion-heading");
+
+  function sortElems(elems) {
+    elems.sort(function (a, b) {
+      const valueA = parseInt(a.parentNode.dataset.position);
+      const valueB = parseInt(b.parentNode.dataset.position);
+
+      if (valueA < valueB) {
+        return -1;
+      }
+      if (valueA > valueB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  function getWindowWidth() {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.body.clientWidth,
+      document.documentElement.clientWidth
+    );
+  }
+
+  function onAccordionClick(evt, ui) {
+    const checkedBoxes = Array.from(accWrap.querySelectorAll(".js-checkbox"));
+    sortElems(checkedBoxes);
+
+    if (!ui.newHeader[0]) {
+      checkedBoxes.forEach(function (el) {
+        if (el.checked) {
+          accWrap.append(el.parentNode);
+        }
+      });
+    } else {
+      checkedBoxes.forEach(function (el) {
+        checkboxes.append(el.parentNode);
+      });
+    }
+  }
+
+  function checkWindowWidth() {
+    const currentWidth = getWindowWidth();
+    const checkedBoxes = Array.from(accWrap.querySelectorAll(".js-checkbox"));
+
+    if (currentWidth > MOBILE_WIDTH && acc) {
+      acc.accordion("destroy");
+      acc = false;
+      checkedBoxes.forEach(function (el) {
+        checkboxes.append(el.parentNode);
+      });
+    } else if ((currentWidth <= MOBILE_WIDTH) & !acc) {
+      acc = $(".js-accordion").accordion({
+        header: '.js-accordion-heading',
+        collapsible: true,
+        active: false,
+        icons: false,
+        heightStyle: "auto",
+        activate: function (evt, ui) {
+          console.log(ui);
+          onAccordionClick(evt, ui);
+        }
+      });
+
+      checkedBoxes.forEach(function (el) {
+        if (el.checked) {
+          accWrap.append(el.parentNode);
+        }
+      });
+    }
+  }
+
+  checkWindowWidth();
+  window.addEventListener("resize", function () {
+    checkWindowWidth();
+  });
+});
