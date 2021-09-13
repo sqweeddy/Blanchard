@@ -452,31 +452,39 @@ var swiper = new Swiper('.editions__swiper', {
   },
   spaceBetween: 50,
 
-  // breakpoints: {
-  //   320: {
-  //     slidesPerView: 1,
-  //     grid: {
-  //       rows: 1,
-  //     },
-  //     spaceBetween: 1,
-  //   },
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      grid: {
+        rows: 4,
+      },
+      spaceBetween: 30,
+    },
 
-  //   580: {
-  //     slidesPerView: 2,
-  //     grid: {
-  //       rows: 2,
-  //     },
-  //     spaceBetween: 34,
-  //   },
+    580: {
+      slidesPerView: 2,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 34,
+    },
 
-  //   1400: {
-  //     slidesPerView: 3,
-  //     grid: {
-  //       rows: 2,
-  //     },
-  //     spaceBetween: 50,
-  //   },
-  // },
+    769: {
+      slidesPerView: 2,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 50,
+    },
+
+    1400: {
+      slidesPerView: 3,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 50,
+    },
+  },
 });
 
 /* Modal */
