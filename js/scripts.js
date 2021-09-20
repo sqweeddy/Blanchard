@@ -477,7 +477,7 @@ var swiper = new Swiper('.editions__swiper', {
       spaceBetween: 50,
     },
 
-    1400: {
+    1300: {
       slidesPerView: 3,
       grid: {
         rows: 1,
@@ -492,7 +492,7 @@ var swiper = new Swiper('.editions__swiper', {
 const modalLink = document.querySelectorAll('.modal-link');
 const modalOverlay = document.querySelector('.modal-overlay ');
 const modals = document.querySelectorAll('.modal');
-const modalClose = document.querySelector('.modal-close__cross');
+const modalClose = document.querySelectorAll('.modal-close');
 const	body = document.body;
 
 let disableScroll = function () {
@@ -534,14 +534,16 @@ modalOverlay.addEventListener('click', (e) => {
 		});
     enableScroll();
 	}
+});
 
-  else if (e.target = modalClose) {
-		modalOverlay.classList.remove('modal-overlay--visible');
+modalClose.forEach(function(closeModal) {
+  closeModal.addEventListener('click', function() {
+    modalOverlay.classList.remove('modal-overlay--visible');
 		modals.forEach((el) => {
 			el.classList.remove('modal--visible');
 		});
     enableScroll();
-	};
+  });
 });
 
 
