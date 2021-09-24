@@ -350,6 +350,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
   const cards = new Cards();
 
+  /* Editions */
+
+  document.querySelectorAll('.editions-category-close').forEach(function(categoryClose){
+    categoryClose.addEventListener('click', function() {
+      this.closest('label').remove();
+      this.remove();
+    });
+  });
 
 });
 
@@ -435,12 +443,12 @@ var swiper = new Swiper('.gallery__swiper', {
 var swiper = new Swiper('.editions__swiper', {
 
   navigation: {
-    nextEl: '.swiper-button-right',
-    prevEl: '.swiper-button-left',
+    nextEl: '.editions .swiper-button-right',
+    prevEl: '.editions .swiper-button-left',
   },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.editions .swiper-pagination',
     type: 'fraction',
     clickable: true,
   },
