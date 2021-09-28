@@ -495,6 +495,55 @@ var swiper = new Swiper('.editions__swiper', {
   },
 });
 
+var swiper = new Swiper('.projects__swiper', {
+
+  navigation: {
+    nextEl: '.projects__swiper-wrapper .swiper-button-next',
+    prevEl: '.projects__swiper-wrapper .swiper-button-prev',
+  },
+
+  slidesPerView: 3,
+  grid: {
+    rows:1,
+    fill: 'row'
+  },
+  spaceBetween: 50,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 30,
+    },
+
+    580: {
+      slidesPerView: 2,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 34,
+    },
+
+    769: {
+      slidesPerView: 2,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 50,
+    },
+
+    1400: {
+      slidesPerView: 3,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 50,
+    },
+  },
+});
+
 /* Modal */
 
 const modalLink = document.querySelectorAll('.modal-link');
@@ -566,7 +615,7 @@ $( function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const MOBILE_WIDTH = 580;
+  const MOBILE_WIDTH = 685;
   let acc;
   const accWrap = document.querySelector(".js-accordion-wrap");
   const checkboxes = accWrap.querySelector(".js-checkboxes");
