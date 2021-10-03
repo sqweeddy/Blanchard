@@ -498,8 +498,8 @@ var swiper = new Swiper('.editions__swiper', {
 var swiper = new Swiper('.projects__swiper', {
 
   navigation: {
-    nextEl: '.projects__swiper-wrapper .swiper-button-next',
-    prevEl: '.projects__swiper-wrapper .swiper-button-prev',
+    nextEl: '.projects__swiper-wrapper .project-swiper-button-right',
+    prevEl: '.projects__swiper-wrapper .project-swiper-button-left',
   },
 
   slidesPerView: 3,
@@ -699,4 +699,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     checkWindowWidth();
   });
+});
+
+/* tolltips */
+
+tippy('.tooltip-btn', {
+  content: 'Пример современных тенденций - современная методология разработки',
+  maxWidth: 264,
+  animation: 'scale',
+  theme: 'purple',
+  hideOnClick: false,
 });
