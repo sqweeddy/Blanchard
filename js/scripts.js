@@ -582,7 +582,6 @@ modalLink.forEach((el) => {
 });
 
 modalOverlay.addEventListener('click', (e) => {
-	console.log(e.target);
 
 	if (e.target == modalOverlay) {
 		modalOverlay.classList.remove('modal-overlay--visible');
@@ -682,7 +681,6 @@ document.addEventListener("DOMContentLoaded", function () {
         icons: false,
         heightStyle: "auto",
         activate: function (evt, ui) {
-          console.log(ui);
           onAccordionClick(evt, ui);
         }
       });
@@ -709,4 +707,56 @@ tippy('.tooltip-btn', {
   animation: 'scale',
   theme: 'purple',
   hideOnClick: false,
+});
+
+/* Ymap */
+
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [48.87, 2.35],
+            zoom: 12
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(48.872185073737896,2.3542149999999555), {}, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: './img/pin.png',
+          // Размеры метки.
+          iconImageSize: [30, 42],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+      }),
+    myMap.geoObjects.add(myPlacemark);
+};
+
+/* Form Validate */
+let selector = document.querySelector("input[type='tel']");
+let im = new Inputmask("+7 (999) 999-99-99");
+
+im.mask(selector);
+
+new window.JustValidate('.contacts-form');
+
+new JustValidate('.contacts-form', {
+  rules: {
+    name: {
+      required: true,
+      minLength: 2,
+      maxLength: 20
+    },
+    phone: {
+      required: true,
+      function: (name, value) => {
+        const phone = selector.inputmask.unmaskedvalue()
+        return Number(phone) && phone.length === 10
+      }
+    }
+  },
 });

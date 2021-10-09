@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body class="page">
@@ -1079,6 +1080,31 @@
       </div>
     </section>
 
+    <section id="contacts" class="contacts">
+      <div class="container contacts__container">
+        <h2 class="heading contacts__heading m-p-reset">Контакты</h2>
+      </div>
+      <div class="contacts__wrapper">
+        <div class="contacts-left">
+          <h3 class="contacts-left__title m-p-reset">Шоурум №4</h3>
+          <address class="contacts-left__adress">Леонтьевский переулок, дом 5/1</address>
+          <h3 class="contacts-left__subtitle subtitle-first m-p-reset">Заказать обратный звонок</h3>
+          <form action="##" method="get" class="contacts-form">
+            <input type="text" class="contacts-form__input" placeholder="Имя*" autocomplete="on" data-validate-form="name" id="name" name="name">
+            <input type="tel" class="contacts-form__input" placeholder="Телефон*" autocomplete="on" data-validate-form="phone" id="phone" name="phone">
+            <button class="contacts-form__btn btn">Заказать</button>
+          </form>
+          <h3 class="contacts-left__subtitle subtitle-second m-p-reset">Связаться в один клик</h3>
+          <div class="contacts-left__social">
+            <a href="##" class="social-link social-link--wu"></a>
+            <a href="##" class="social-link social-link--tg"></a>
+          </div>
+          <div class="contacts-right">
+            <div id="map" class="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -1134,6 +1160,8 @@
   <script defer src="js/choices.min.js"></script>
   <script defer src="https://unpkg.com/@popperjs/core@2"></script>
   <script defer src="https://unpkg.com/tippy.js@6"></script>
+  <script defer src="js/just-validate.min.js"></script>
+  <script defer src="js/inputmask.min.js"></script>
   <script defer src="js/scripts.js"></script>
 </body>
 </html>
