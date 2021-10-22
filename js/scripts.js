@@ -344,21 +344,11 @@ window.addEventListener('DOMContentLoaded', function() {
         cards.cardsWrap.children[0].classList.remove("swiper-wrapper");
         cards.cardsWrap.children[0].removeAttribute("aria-live");
         cards.cardsWrap.children[0].removeAttribute("id");
-      }
-    }
-  }
+      };
+    };
+  };
 
   const cards = new Cards();
-
-  /* Editions */
-
-  document.querySelectorAll('.editions-category-close').forEach(function(categoryClose){
-    categoryClose.addEventListener('click', function() {
-      this.closest('label').remove();
-      this.remove();
-    });
-  });
-
 });
 
 
@@ -646,6 +636,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  function removeCheckbox (e) {
+    checkboxes.append(e.target.parentElement);
+    e.target.removeEventListener('change', removeCheckbox);
+  };
+
   function onAccordionClick(evt, ui) {
     const checkedBoxes = Array.from(accWrap.querySelectorAll(".js-checkbox"));
     sortElems(checkedBoxes);
@@ -654,20 +649,24 @@ document.addEventListener("DOMContentLoaded", function () {
       checkedBoxes.forEach(function (el) {
         if (el.checked) {
           accWrap.append(el.parentNode);
-        }
+          el.addEventListener('change', removeCheckbox);
+        };
       });
     } else {
       checkedBoxes.forEach(function (el) {
         checkboxes.append(el.parentNode);
+        el.removeEventListener('change', removeCheckbox);
       });
-    }
-  }
+    };
+  };
 
   function checkWindowWidth() {
     const currentWidth = getWindowWidth();
     const checkedBoxes = Array.from(accWrap.querySelectorAll(".js-checkbox"));
 
     if (currentWidth > MOBILE_WIDTH && acc) {
+      const checkedBoxes = Array.from(accWrap.querySelectorAll(".js-checkbox"));
+      sortElems(checkedBoxes);
       acc.accordion("destroy");
       acc = false;
       checkedBoxes.forEach(function (el) {
@@ -681,6 +680,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icons: false,
         heightStyle: "auto",
         activate: function (evt, ui) {
+          console.log(ui);
           onAccordionClick(evt, ui);
         }
       });
@@ -714,26 +714,26 @@ tippy('.tooltip-btn', {
 ymaps.ready(init);
 
 function init() {
-    var myMap = new ymaps.Map("map", {
-            center: [48.87, 2.35],
-            zoom: 12
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+  var myMap = new ymaps.Map("map", {
+    center: [55.75846806898367, 37.61108849999989],
+    zoom: 14,
+    controls: ['geolocationControl', 'zoomControl']
+  }, {
+    geolocationControlSize: "large",
+    geolocationControlPosition:  { top: "200px", right: "20px" },
+    geolocationControlFloat: 'none',
+    zoomControlSize: "small",
+    zoomControlFloat: "none",
+    zoomControlPosition: { top: "120px", right: "20px" }
+  });
 
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(48.872185073737896,2.3542149999999555), {}, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: './img/pin.png',
-          // Размеры метки.
-          iconImageSize: [30, 42],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-5, -38]
-      }),
-    myMap.geoObjects.add(myPlacemark);
+  myPlacemark = new ymaps.Placemark([55.75846806898367, 37.60108849999989], {}, {
+    iconLayout: 'default#image',
+    iconImageHref: './img/contacts/pin.png',
+    iconImageSize: [20, 20],
+    iconImageOffset: [-10, -20]
+  }),
+  myMap.geoObjects.add(myPlacemark);
 };
 
 /* Form Validate */
@@ -742,7 +742,6 @@ let im = new Inputmask("+7 (999) 999-99-99");
 
 im.mask(selector);
 
-new window.JustValidate('.contacts-form');
 
 new JustValidate('.contacts-form', {
   rules: {
@@ -759,4 +758,13 @@ new JustValidate('.contacts-form', {
       }
     }
   },
+  messages: {
+    name: {
+      required: 'Укажите Ваше имя',
+      minLength: 'Минимальная длина имени 2 символа'
+    },
+    phone: {
+      required: 'Укажите Ваш телефон'
+    }
+},
 });
