@@ -385,6 +385,11 @@ const choices = new Choices(element, {
 
 var swiper = new Swiper('.gallery__swiper', {
 
+  a11y: {
+    prevSlideMessage: 'Предыдущий слайд',
+    nextSlideMessage: 'Следующий слайд',
+  },
+
   navigation: {
     nextEl: '.swiper-button-right',
     prevEl: '.swiper-button-left',
@@ -431,6 +436,11 @@ var swiper = new Swiper('.gallery__swiper', {
 });
 
 var swiper = new Swiper('.editions__swiper', {
+
+  a11y: {
+    prevSlideMessage: 'Предыдущий слайд',
+    nextSlideMessage: 'Следующий слайд',
+  },
 
   navigation: {
     nextEl: '.editions .swiper-button-right',
@@ -767,4 +777,26 @@ new JustValidate('.contacts-form', {
       required: 'Укажите Ваш телефон'
     }
 },
+});
+
+/* scroll */
+
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let href = this.getAttribute('href').substring(1);
+
+      const scrollTarget = document.getElementById(href);
+
+      const topOffset = 0; // если не нужен отступ сверху
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - topOffset;
+
+      window.scrollBy({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  });
 });
