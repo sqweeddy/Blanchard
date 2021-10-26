@@ -2018,7 +2018,7 @@
 
 .contacts {
   padding-top: 12px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .contacts__heading {
@@ -2157,7 +2157,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 700px;
+  height: 698px;
   min-height: 320px;
   width: calc(1063 / 1600 * 100% + ((100vw - 100%) / 2));
   margin-right: calc((-100vw + 100%) / 2);
@@ -2697,6 +2697,7 @@
 
   .contacts-map {
     width: calc(486/924 * 100%);
+    height: 701px;
   }
 
   /* Footer */
@@ -2966,6 +2967,7 @@
 
 .contacts-map {
   width: calc(296/668 * 100%);
+  min-height: 701px;
   height: 100%;
 }
 
@@ -3420,6 +3422,7 @@
   position: unset;
   width: 100vw;
   height: 320px;
+  min-height: unset;
 }
 
 .subtitle-first {
