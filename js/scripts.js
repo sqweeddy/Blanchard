@@ -396,7 +396,7 @@ var swiper = new Swiper('.gallery__swiper', {
   },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.gallery .swiper-pagination',
     type: 'fraction',
     clickable: true,
   },

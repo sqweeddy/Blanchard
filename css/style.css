@@ -418,7 +418,7 @@
   transition: color .3s ease-in-out;
 }
 
-.header__link:focus:focus-visible {
+.header__link:focus:focus-visible:not(.is-active) {
   background-color: var(--purple-dark);
 }
 
@@ -456,6 +456,7 @@
 }
 
 .header__link.is-active {
+  outline: 0;
   color: var(--purple-dark);
 }
 
@@ -888,7 +889,7 @@
 .gallery-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .gallery__heading {
@@ -1012,7 +1013,7 @@
   color: var(--purple-dark);
 }
 
-.gallery__swiper {
+.gallery__swiper-wrapper {
   margin-right: 0;
   width: calc(1150 / 1600 *100%);
 }
@@ -1450,6 +1451,8 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: calc(100% / 3 - 50px); /* 34px*/
   min-height: 400px;
   margin-right: 50px;
@@ -1510,6 +1513,7 @@
 .event-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding: 15px 18px 41px 49px;
   min-height: 400px;
 }
@@ -2018,7 +2022,7 @@
 
 .contacts {
   padding-top: 12px;
-  /* overflow-x: hidden; */
+  overflow: hidden;
 }
 
 .contacts__heading {
@@ -2559,7 +2563,7 @@
     bottom: -8px;
   }
 
-  .gallery__swiper {
+  .gallery__swiper-wrapper {
     width: calc(594 / 924 * 100%);
   }
 
@@ -2782,7 +2786,7 @@
     position: static;
   }
 
-  .gallery__swiper {
+  .gallery__swiper-wrapper {
     width: 100%;
     margin-bottom: 30px;
   }
@@ -3156,12 +3160,17 @@
   order: 1;
 }
 
-.gallery__swiper {
+.gallery__swiper-wrapper {
   display: flex;
   flex-direction: column-reverse;
   padding-left: 0;
   margin-bottom: 21px;
   width: 100%;
+}
+
+.gallery__swiper {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .gallery-slide::before {
@@ -3174,10 +3183,6 @@
   margin-bottom: 0px;
   padding-top: 0;
   padding-left: 0;
-}
-
-.swiper-wrapper {
-  margin-bottom: 20px;
 }
 
 .swiper-pagination {
@@ -3360,7 +3365,7 @@
 /* Contacts */
 
 .contacts {
-  padding-top: 13px;
+  padding-top: 32px;
 }
 
 .contacts__heading {
@@ -3506,7 +3511,7 @@
 
   .editions {
     padding-top: 53px;
-    padding-bottom: 5px;
+    padding-bottom: 25px;
     background-attachment: fixed;
   }
 
